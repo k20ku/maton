@@ -46,41 +46,41 @@ struct Map current;
 struct Map next;
 
 /*
-    6x6
-    {0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0},
+	6x6
+	{0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0},
 
-    10x10
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	10x10
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 
 */
 
 #define X 10
 #define Y 10
 char init[X][Y] = {
-    {0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-    {1, 1, 0, 0, 1, 1, 1, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+	{1, 1, 0, 0, 1, 1, 1, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 };
 
 int dy[9] = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
@@ -88,26 +88,26 @@ int dx[9] = {-1, -1, -1, 0, 0, 0, 1, 1, 1};
 
 int main(int argc, char *argv[]) {
 	// init
-    // https://en.cppreference.com/w/c/language/main_function.html#Parameters
-    // program NULL -> argc 2
-    if(argc < 2) {
-        for (int y = 0; y < 10; y++) {
-            for (int x = 0; x < 10; x++) {
-                current.cell[y][x] = init[y][x];
-            }
-        }
-    } else {
-        unsigned int seed = (unsigned int)time(NULL);
-        srand(seed);
-        for (int y = 0; y < SIZE; y++) {
-            for (int x = 0; x < SIZE; x++) {
-                current.cell[y][x] = (rand() & 1);
-            }
-        }
-    }  
+	// https://en.cppreference.com/w/c/language/main_function.html#Parameters
+	// program NULL -> argc 2
+	if(argc < 2) {
+		for (int y = 0; y < 10; y++) {
+			for (int x = 0; x < 10; x++) {
+				current.cell[y][x] = init[y][x];
+			}
+		}
+	} else {
+		unsigned int seed = (unsigned int)time(NULL);
+		srand(seed);
+		for (int y = 0; y < SIZE; y++) {
+			for (int x = 0; x < SIZE; x++) {
+				current.cell[y][x] = (rand() & 1);
+			}
+		}
+	}  
 
 
-	// 
+	// start automaton main loop
 	for (;;) {
 		// Print
 		print_map(&current);
@@ -123,37 +123,37 @@ int main(int argc, char *argv[]) {
 				// 0 1 2
 				// 3 4 5 <- 4 が自分
 				// 6 7 8
-                for (int pos = 0; pos < 9; pos++) {
-                    if (pos == 4) continue;
-                    count += current.cell[(y + dy[pos]) & (SIZE -1)][(x + dx[pos]) & (SIZE- 1)];
-                }
+				for (int pos = 0; pos < 9; pos++) {
+					if (pos == 4) continue;
+					count += current.cell[(y + dy[pos]) & (SIZE -1)][(x + dx[pos]) & (SIZE- 1)];
+				}
 
 				if (current.cell[y][x]) {
 					// current == alive, dead or alive?
-                    // born! or alive!
-                    if (count == 2 || count == 3) {
-                        next.cell[y][x] = 1;
-                    } else {
-                        // keep dead due to too few or too many
-                        next.cell[y][x] = 0;
-                    }
+					// born! or alive!
+					if (count == 2 || count == 3) {
+						next.cell[y][x] = 1;
+					} else {
+						// keep dead due to too few or too many
+						next.cell[y][x] = 0;
+					}
 				} else {
 				    // current == dead, dead or alive?
-                    // keep alive!
-                    if (count == 3) {
-                        next.cell[y][x] = 1;
-                    } else {
-                        // dead due to too few or many
-                        next.cell[y][x] = 0;
-                    }
+					// keep alive!
+					if (count == 3) {
+						next.cell[y][x] = 1;
+					} else {
+						// dead due to too few or many
+						next.cell[y][x] = 0;
+					}
 				}
 			}	
 		}
 
-        current = next;
+		current = next;
 		int c = getchar();
-        cursor_up_by(SIZE + 1);
-        fflush(stdout);
+		cursor_up_by(SIZE + 1);
+		fflush(stdout);
 	}
 	return 0;
 }
